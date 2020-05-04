@@ -1,5 +1,5 @@
 
-name: Swift
+name: Build
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     tags-ignore: '*'
 
 jobs:
-  SwiftLint:
+  swiftlint:
     runs-on: ubuntu-18.04
 
     steps:
@@ -18,7 +18,7 @@ jobs:
         uses: norio-nomura/action-swiftlint@3.1.0
         with:
           args: --strict
-
+  
   build:
     name: Build
     runs-on: macOS-latest
@@ -29,13 +29,3 @@ jobs:
   
       - name: Build
         run: swift build -v
-      
-  test:
-    name: Test
-    runs-on: macOS-latest
-    
-    steps:
-      - name: Checkout branch
-        uses: actions/checkout@v1
-
-      - run: swift test -v --enable-test-discovery --enable-code-coverage --sanitize=thread
