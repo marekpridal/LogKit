@@ -18,10 +18,16 @@ jobs:
     - name: Create LogKit.xcframework.zip
       run: zip -r artifacts/LogKit.xcframework.zip artifacts/LogKit.xcframework
 
-    - name: Upload artifacts
+    - name: Upload artifact of LogKit.xcframework
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: Artifacts
+        name: LogKit.xcframework
+        path: ./artifacts/LogKit.xcframework
+  
+    - name: Upload artifact of LogKit.xcframework.zip
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: LogKit.xcframework.zip
         path: ./artifacts/LogKit.xcframework.zip
 
     - name: Create Release
@@ -42,6 +48,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: ./artifacts/LogKit.xcframework
-        asset_name: LogKit.xcframework
+        asset_path: ./artifacts/LogKit.xcframework.zip
+        asset_name: LogKit.xcframework.zip
         asset_content_type: application/zip
