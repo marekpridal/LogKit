@@ -3,6 +3,7 @@
 
 import PackageDescription
 
+//swiftlint:disable all
 let package = Package(
     name: "LogKit",
     products: [
