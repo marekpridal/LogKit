@@ -14,7 +14,7 @@ let package = Package(
         .library(
             name: "LogKit-dynamic",
             type: .dynamic,
-            targets: ["LogKit"]),
+            targets: ["LogKit"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -28,6 +28,6 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "LogKitTests",
-            dependencies: ["LogKit"]),
+            dependencies: ["LogKit"])
     ]
 )
