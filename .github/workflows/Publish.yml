@@ -24,5 +24,5 @@ jobs:
     - name: Create release
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "./artifacts/LogKit.xcframework"
+        artifacts: "artifacts/LogKit.xcframework"
         token: ${{ secrets.GITHUB_TOKEN }}
