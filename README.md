@@ -1,6 +1,6 @@
 # LogKit
 
-![build](https://github.com/marekpridal/LogKit/workflows/Swift/badge.svg?branch=master) ![platforms](https://img.shields.io/badge/platform-iOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20macOS-333333) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
+![Build](https://github.com/marekpridal/LogKit/workflows/Build/badge.svg?branch=master) ![platforms](https://img.shields.io/badge/platform-iOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20macOS-333333) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 
 LogKit is logging framework for simplify work with `os.log` API provided by Apple.
 
