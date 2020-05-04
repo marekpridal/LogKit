@@ -116,6 +116,7 @@ public enum Log {
         os_log("%{PRIVATE}@", log: deinitLog, type: .error, error.localizedDescription)
     }
 
+    @available(watchOS 6.2, *)
     public static func products(request: SKProductsRequest) {
         guard enabledLogging.contains(.inAppPurchase) else { return }
         let deinitLog = OSLog(subsystem: subsystem, category: Category.inAppPurchase.rawValue)
@@ -125,6 +126,7 @@ public enum Log {
         os_log("%{PRIVATE}@", log: deinitLog, type: .debug, requestMessage)
     }
 
+    @available(watchOS 6.2, *)
     public static func products(response: SKProductsResponse) {
         guard enabledLogging.contains(.inAppPurchase) else { return }
         let deinitLog = OSLog(subsystem: subsystem, category: Category.inAppPurchase.rawValue)
@@ -136,6 +138,7 @@ public enum Log {
         os_log("%{PRIVATE}@", log: deinitLog, type: .debug, responseMessage)
     }
 
+    @available(watchOS 6.2, *)
     public static func products(request: SKRequest) {
         guard enabledLogging.contains(.inAppPurchase) else { return }
         let deinitLog = OSLog(subsystem: subsystem, category: Category.inAppPurchase.rawValue)
@@ -146,6 +149,7 @@ public enum Log {
         os_log("%{PRIVATE}@", log: deinitLog, type: .debug, requestMessage)
     }
 
+    @available(watchOS 6.2, *)
     public static func paymentQueue(_ queue: SKPaymentQueue) {
         guard enabledLogging.contains(.inAppPurchase) else { return }
         let deinitLog = OSLog(subsystem: subsystem, category: Category.inAppPurchase.rawValue)
@@ -155,6 +159,7 @@ public enum Log {
         os_log("%{PRIVATE}@", log: deinitLog, type: .debug, requestMessage)
     }
 
+    @available(watchOS 6.2, *)
     public static func payment(transactions: [SKPaymentTransaction]) {
         guard enabledLogging.contains(.inAppPurchase) else { return }
         let deinitLog = OSLog(subsystem: subsystem, category: Category.inAppPurchase.rawValue)
