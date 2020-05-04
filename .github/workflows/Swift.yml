@@ -18,10 +18,7 @@ jobs:
 
   build:
     name: Build on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macOS-latest]
+    runs-on: macOS-latest
 
     steps:
       - name: Checkout branch
@@ -32,10 +29,7 @@ jobs:
       
   test:
     name: Test on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macOS-latest]
+    runs-on: macOS-latest
     
     steps:
       - name: Checkout branch
