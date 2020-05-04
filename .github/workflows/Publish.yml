@@ -15,10 +15,7 @@ jobs:
     - name: Build
       run: ./create-xcframework.sh
     - name: Upload binaries to release
-      uses: svenstaro/upload-release-action@v1-release
+      uses: actions/upload-artifact@v1.0.0
       with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: LogKit.xcframework
-        asset_name: LogKit.xcframework
-        tag: ${{ github.ref }}
-        overwrite: true
+        name: Artifacts
+        path: ./artifacts
