@@ -17,7 +17,7 @@ jobs:
           args: --strict
 
   build:
-    name: Build on ${{ matrix.os }}
+    name: Build
     runs-on: macOS-latest
 
     steps:
@@ -28,7 +28,7 @@ jobs:
         run: swift build -v
       
   test:
-    name: Test on ${{ matrix.os }}
+    name: Test
     runs-on: macOS-latest
     
     steps:
