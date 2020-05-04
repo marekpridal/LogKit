@@ -21,8 +21,10 @@ jobs:
         name: Artifacts
         path: ./artifacts
     
-    - name: Create release
-      uses: ncipollo/release-action@v1
+    - name: Create GitHub release
+      uses: Roang-zero1/github-upload-release-artifacts-action@master
       with:
-        artifacts: "artifacts/LogKit.xcframework"
-        token: ${{ secrets.GITHUB_TOKEN }}
+        args:
+        - artifacts/
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
