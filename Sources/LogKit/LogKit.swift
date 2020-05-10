@@ -122,7 +122,7 @@ public enum Log {
         let deinitLog = OSLog(subsystem: subsystem, category: Category.inAppPurchase.rawValue)
         var requestMessage = "\n---REQUEST------------------\n"
         requestMessage.append("\(request)")
-        requestMessage.append("----------------------------\n")
+        requestMessage.append("\n----------------------------\n")
         os_log("%{PRIVATE}@", log: deinitLog, type: .debug, requestMessage)
     }
 
@@ -132,9 +132,9 @@ public enum Log {
         let deinitLog = OSLog(subsystem: subsystem, category: Category.inAppPurchase.rawValue)
         var responseMessage = "\n---RESPONSE------------------\n"
         responseMessage.append("Invalid product identifiers \(response.invalidProductIdentifiers)")
-        responseMessage.append("----------------------------\n")
+        responseMessage.append("\n----------------------------\n")
         responseMessage.append("Products \(response.products)")
-        responseMessage.append("----------------------------\n")
+        responseMessage.append("\n----------------------------\n")
         os_log("%{PRIVATE}@", log: deinitLog, type: .debug, responseMessage)
     }
 
@@ -144,7 +144,7 @@ public enum Log {
         let deinitLog = OSLog(subsystem: subsystem, category: Category.inAppPurchase.rawValue)
         var requestMessage = "\n---REQUEST------------------\n"
         requestMessage.append("\(request)")
-        requestMessage.append("----------------------------\n")
+        requestMessage.append("\n----------------------------\n")
         Log.default(requestMessage)
         os_log("%{PRIVATE}@", log: deinitLog, type: .debug, requestMessage)
     }
@@ -155,7 +155,7 @@ public enum Log {
         let deinitLog = OSLog(subsystem: subsystem, category: Category.inAppPurchase.rawValue)
         var requestMessage = "\n---QUEUE------------------\n"
         requestMessage.append("\(queue)")
-        requestMessage.append("----------------------------\n")
+        requestMessage.append("\n----------------------------\n")
         os_log("%{PRIVATE}@", log: deinitLog, type: .debug, requestMessage)
     }
 
@@ -165,7 +165,7 @@ public enum Log {
         let deinitLog = OSLog(subsystem: subsystem, category: Category.inAppPurchase.rawValue)
         var responseMessage = "\n---UPDATED TRANSACTIONS------------------\n"
         responseMessage.append("\(transactions)")
-        responseMessage.append("----------------------------\n")
+        responseMessage.append("\n----------------------------\n")
         os_log("%{PRIVATE}@", log: deinitLog, type: .debug, responseMessage)
     }
 }
