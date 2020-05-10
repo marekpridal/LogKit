@@ -1,6 +1,6 @@
 # LogKit
 
-![Build](https://github.com/marekpridal/LogKit/workflows/Build/badge.svg?branch=master) ![platforms](https://img.shields.io/badge/platform-iOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20macOS-333333) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
+![Build](https://github.com/marekpridal/LogKit/workflows/Build/badge.svg?branch=master) ![platforms](https://img.shields.io/badge/platform-iOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20macOS-333333) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager) ![GitHub](https://img.shields.io/github/license/marekpridal/LogKit) ![GitHub All Releases](https://img.shields.io/github/downloads/marekpridal/LogKit/total)
 
 LogKit is logging framework for simplify work with `os.log` API provided by Apple.
 
@@ -12,7 +12,9 @@ LogKit is logging framework for simplify work with `os.log` API provided by Appl
 
 ## Installation
 
-LogKit support SwiftPM and it's integration using Xcode or manually using Package.swift.
+#### LogKit supports [XCFramework](https://developer.apple.com/videos/play/wwdc2019/416/) integration into Xcode project. Just go to [Release page](https://github.com/marekpridal/LogKit/releases), download latest version, drag and drop it into existing Xcode project and you are done 🎉
+
+LogKit also supports SwiftPM and it's integration using Xcode or manually using Package.swift.
 
 ### [Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app)
 
