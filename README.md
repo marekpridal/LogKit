@@ -14,7 +14,7 @@ LogKit is logging framework for simplify work with `os.log` API provided by Appl
 
 #### LogKit supports [XCFramework](https://developer.apple.com/videos/play/wwdc2019/416/) integration into Xcode project. Just go to [Release page](https://github.com/marekpridal/LogKit/releases), download latest version, drag and drop it into existing Xcode project and you are done 🎉
 
-LogKit also supports SwiftPM and it's integration using Xcode or manually using Package.swift.
+LogKit also supports SwiftPM and its integration using Xcode or manually using Package.swift.
 
 ### [Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app)
 
