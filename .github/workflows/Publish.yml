@@ -17,7 +17,7 @@ jobs:
       run: swift package generate-xcodeproj
 
     - name: Set version
-      run: agvtool new-version ${{ github.ref }} && agvtool new-marketing-version ${{ github.ref }}
+      run: /usr/libexec/Plistbuddy -c "Set CFBundleVersion ${GITHUB_REF#refs/*/}" LogKit.xcodeproj/LogKit_Info.plist 
 
     - name: Build
       run: ./create-xcframework.sh
