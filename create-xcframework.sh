@@ -1,5 +1,3 @@
-swift package generate-xcodeproj
-
 xcodebuild archive \
 -project LogKit.xcodeproj \
 -scheme LogKit-Package \
