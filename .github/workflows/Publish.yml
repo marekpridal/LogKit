@@ -12,6 +12,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+
+    - name: Generate Xcode project
+      run: swift package generate-xcodeproj
+
+    - name: Set version
+      run: /usr/libexec/Plistbuddy -c "Set CFBundleVersion ${GITHUB_REF#refs/*/}" LogKit.xcodeproj/LogKit_Info.plist 
+
     - name: Build
       run: ./create-xcframework.sh
 
