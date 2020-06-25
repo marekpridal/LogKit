@@ -1,6 +1,7 @@
 xcodebuild archive \
 -project LogKit.xcodeproj \
 -scheme LogKit-Package \
+-configuration Release \
 -destination "generic/platform=iOS" \
 -archivePath "archives/LogKit-iOS" \
 SKIP_INSTALL=NO \
@@ -10,6 +11,7 @@ APPLICATION_EXTENSION_API_ONLY=YES
 xcodebuild archive \
 -project LogKit.xcodeproj \
 -scheme LogKit-Package \
+-configuration Release \
 -destination "generic/platform=iOS Simulator" \
 -archivePath "archives/LogKit-iOS-Simulator" \
 SKIP_INSTALL=NO \
@@ -19,6 +21,7 @@ APPLICATION_EXTENSION_API_ONLY=YES
 xcodebuild archive \
 -project LogKit.xcodeproj \
 -scheme LogKit-Package \
+-configuration Release \
 -destination "generic/platform=watchOS" \
 -archivePath "archives/LogKit-watchOS" \
 SKIP_INSTALL=NO \
@@ -28,6 +31,7 @@ APPLICATION_EXTENSION_API_ONLY=YES
 xcodebuild archive \
 -project LogKit.xcodeproj \
 -scheme LogKit-Package \
+-configuration Release \
 -destination "generic/platform=watchOS Simulator" \
 -archivePath "archives/LogKit-watchOS-Simulator" \
 SKIP_INSTALL=NO \
@@ -37,6 +41,7 @@ APPLICATION_EXTENSION_API_ONLY=YES
 xcodebuild archive \
 -project LogKit.xcodeproj \
 -scheme LogKit-Package \
+-configuration Release \
 -destination "generic/platform=tvOS" \
 -archivePath "archives/LogKit-tvOS" \
 SKIP_INSTALL=NO \
@@ -46,6 +51,7 @@ APPLICATION_EXTENSION_API_ONLY=YES
 xcodebuild archive \
 -project LogKit.xcodeproj \
 -scheme LogKit-Package \
+-configuration Release \
 -destination "generic/platform=tvOS Simulator" \
 -archivePath "archives/LogKit-tvOS-Simulator" \
 SKIP_INSTALL=NO \
@@ -55,6 +61,7 @@ APPLICATION_EXTENSION_API_ONLY=YES
 xcodebuild archive \
 -project LogKit.xcodeproj \
 -scheme LogKit-Package \
+-configuration Release \
 -destination "generic/platform=macOS" \
 -archivePath "archives/LogKit-macOS" \
 SKIP_INSTALL=NO \
