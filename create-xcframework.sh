@@ -3,7 +3,7 @@ xcodebuild archive \
 -scheme LogKit-Package \
 -configuration Release \
 -destination "generic/platform=iOS" \
--archivePath "archives/LogKit-iOS" \
+-archivePath "$PWD/archives/LogKit-iOS" \
 SKIP_INSTALL=NO \
 BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
 APPLICATION_EXTENSION_API_ONLY=YES
@@ -13,7 +13,7 @@ xcodebuild archive \
 -scheme LogKit-Package \
 -configuration Release \
 -destination "generic/platform=iOS Simulator" \
--archivePath "archives/LogKit-iOS-Simulator" \
+-archivePath "$PWD/archives/LogKit-iOS-Simulator" \
 SKIP_INSTALL=NO \
 BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
 APPLICATION_EXTENSION_API_ONLY=YES
@@ -23,7 +23,7 @@ xcodebuild archive \
 -scheme LogKit-Package \
 -configuration Release \
 -destination "generic/platform=watchOS" \
--archivePath "archives/LogKit-watchOS" \
+-archivePath "$PWD/archives/LogKit-watchOS" \
 SKIP_INSTALL=NO \
 BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
 APPLICATION_EXTENSION_API_ONLY=YES
@@ -33,7 +33,7 @@ xcodebuild archive \
 -scheme LogKit-Package \
 -configuration Release \
 -destination "generic/platform=watchOS Simulator" \
--archivePath "archives/LogKit-watchOS-Simulator" \
+-archivePath "$PWD/archives/LogKit-watchOS-Simulator" \
 SKIP_INSTALL=NO \
 BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
 APPLICATION_EXTENSION_API_ONLY=YES
@@ -43,7 +43,7 @@ xcodebuild archive \
 -scheme LogKit-Package \
 -configuration Release \
 -destination "generic/platform=tvOS" \
--archivePath "archives/LogKit-tvOS" \
+-archivePath "$PWD/archives/LogKit-tvOS" \
 SKIP_INSTALL=NO \
 BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
 APPLICATION_EXTENSION_API_ONLY=YES
@@ -53,7 +53,7 @@ xcodebuild archive \
 -scheme LogKit-Package \
 -configuration Release \
 -destination "generic/platform=tvOS Simulator" \
--archivePath "archives/LogKit-tvOS-Simulator" \
+-archivePath "$PWD/archives/LogKit-tvOS-Simulator" \
 SKIP_INSTALL=NO \
 BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
 APPLICATION_EXTENSION_API_ONLY=YES
@@ -63,17 +63,24 @@ xcodebuild archive \
 -scheme LogKit-Package \
 -configuration Release \
 -destination "generic/platform=macOS" \
--archivePath "archives/LogKit-macOS" \
+-archivePath "$PWD/archives/LogKit-macOS" \
 SKIP_INSTALL=NO \
 BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
 APPLICATION_EXTENSION_API_ONLY=YES
 
 xcodebuild -create-xcframework \
--framework "archives/LogKit-iOS.xcarchive/Products/Library/Frameworks/LogKit.framework" \
--framework "archives/LogKit-iOS-Simulator.xcarchive/Products/Library/Frameworks/LogKit.framework" \
--framework "archives/LogKit-watchOS.xcarchive/Products/Library/Frameworks/LogKit.framework" \
--framework "archives/LogKit-watchOS-Simulator.xcarchive/Products/Library/Frameworks/LogKit.framework" \
--framework "archives/LogKit-tvOS.xcarchive/Products/Library/Frameworks/LogKit.framework" \
--framework "archives/LogKit-tvOS-Simulator.xcarchive/Products/Library/Frameworks/LogKit.framework" \
--framework "archives/LogKit-macOS.xcarchive/Products/Library/Frameworks/LogKit.framework" \
+-framework "$PWD/archives/LogKit-iOS.xcarchive/Products/Library/Frameworks/LogKit.framework" \
+-debug-symbols "$PWD/archives/LogKit-iOS.xcarchive/dSYMs/LogKit.framework.dSYM" \
+-framework "$PWD/archives/LogKit-iOS-Simulator.xcarchive/Products/Library/Frameworks/LogKit.framework" \
+-debug-symbols "$PWD/archives/LogKit-iOS-Simulator.xcarchive/dSYMs/LogKit.framework.dSYM" \
+-framework "$PWD/archives/LogKit-watchOS.xcarchive/Products/Library/Frameworks/LogKit.framework" \
+-debug-symbols "$PWD/archives/LogKit-watchOS.xcarchive/dSYMs/LogKit.framework.dSYM" \
+-framework "$PWD/archives/LogKit-watchOS-Simulator.xcarchive/Products/Library/Frameworks/LogKit.framework" \
+-debug-symbols "$PWD/archives/LogKit-watchOS-Simulator.xcarchive/dSYMs/LogKit.framework.dSYM" \
+-framework "$PWD/archives/LogKit-tvOS.xcarchive/Products/Library/Frameworks/LogKit.framework" \
+-debug-symbols "$PWD/archives/LogKit-tvOS.xcarchive/dSYMs/LogKit.framework.dSYM" \
+-framework "$PWD/archives/LogKit-tvOS-Simulator.xcarchive/Products/Library/Frameworks/LogKit.framework" \
+-debug-symbols "$PWD/archives/LogKit-tvOS-Simulator.xcarchive/dSYMs/LogKit.framework.dSYM" \
+-framework "$PWD/archives/LogKit-macOS.xcarchive/Products/Library/Frameworks/LogKit.framework" \
+-debug-symbols "$PWD/archives/LogKit-macOS.xcarchive/dSYMs/LogKit.framework.dSYM" \
 -output artifacts/LogKit.xcframework
