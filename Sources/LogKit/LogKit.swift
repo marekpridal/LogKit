@@ -109,7 +109,7 @@ public enum Log {
         os_log("%{PRIVATE}@", log: deinitLog, type: .error, error.localizedDescription)
     }
 
-    static func database(_ string: String) {
+    public static func database(_ string: String) {
         guard enabledLogging.contains(.database) else { return }
         let log = OSLog(subsystem: subsystem, category: LogKit.Log.Category.database.rawValue)
         os_log("%{PRIVATE}@", log: log, type: .debug, string)
