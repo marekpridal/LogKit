@@ -11,7 +11,7 @@ import StoreKit
 
 @available(OSX 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *)
 public enum Log {
-    public enum Category: String {
+    public enum Category: String, CaseIterable {
         case `deinit`
         case function
         case networking
@@ -19,18 +19,11 @@ public enum Log {
         case expiration
         case inAppPurchase
         case error
+        case database
     }
 
     public static var subsystem = Bundle.main.bundleIdentifier!
-    public static var enabledLogging: [Category] = [
-        .deinit,
-        .function,
-        .networking,
-        .default,
-        .expiration,
-        .inAppPurchase,
-        .error
-    ]
+    public static var enabledLogging: [Category] = Category.allCases
 
     public static func `deinit`(of object: AnyObject) {
         guard enabledLogging.contains(.deinit) else { return }
@@ -114,6 +107,12 @@ public enum Log {
         guard enabledLogging.contains(.error) else { return }
         let deinitLog = OSLog(subsystem: subsystem, category: Category.error.rawValue)
         os_log("%{PRIVATE}@", log: deinitLog, type: .error, error.localizedDescription)
+    }
+
+    static func database(_ string: String) {
+        guard enabledLogging.contains(.database) else { return }
+        let log = OSLog(subsystem: subsystem, category: LogKit.Log.Category.database.rawValue)
+        os_log("%{PRIVATE}@", log: log, type: .debug, string)
     }
 
     @available(watchOS 6.2, *)
