@@ -68,6 +68,17 @@ SKIP_INSTALL=NO \
 BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
 APPLICATION_EXTENSION_API_ONLY=YES
 
+xcodebuild archive \
+-project LogKit.xcodeproj \
+-scheme LogKit-Package \
+-configuration Release \
+-destination 'platform=macOS,variant=Mac Catalyst' \
+-archivePath "$PWD/archives/LogKit-macCatalyst" \
+SKIP_INSTALL=NO \
+BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+APPLICATION_EXTENSION_API_ONLY=YES \
+SUPPORTS_MACCATALYST=YES
+
 xcodebuild -create-xcframework \
 -framework "$PWD/archives/LogKit-iOS.xcarchive/Products/Library/Frameworks/LogKit.framework" \
 -debug-symbols "$PWD/archives/LogKit-iOS.xcarchive/dSYMs/LogKit.framework.dSYM" \
@@ -83,4 +94,6 @@ xcodebuild -create-xcframework \
 -debug-symbols "$PWD/archives/LogKit-tvOS-Simulator.xcarchive/dSYMs/LogKit.framework.dSYM" \
 -framework "$PWD/archives/LogKit-macOS.xcarchive/Products/Library/Frameworks/LogKit.framework" \
 -debug-symbols "$PWD/archives/LogKit-macOS.xcarchive/dSYMs/LogKit.framework.dSYM" \
+-framework "$PWD/archives/LogKit-macCatalyst.xcarchive/Products/Library/Frameworks/LogKit.framework" \
+-debug-symbols "$PWD/archives/LogKit-macCatalyst.xcarchive/dSYMs/LogKit.framework.dSYM" \
 -output artifacts/LogKit.xcframework
