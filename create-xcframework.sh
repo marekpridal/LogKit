@@ -72,7 +72,7 @@ xcodebuild archive \
 -project LogKit.xcodeproj \
 -scheme LogKit-Package \
 -configuration Release \
--destination 'platform=macOS,variant=Mac Catalyst' \
+-destination 'generic/platform=macOS,variant=Mac Catalyst' \
 -archivePath "$PWD/archives/LogKit-macCatalyst" \
 SKIP_INSTALL=NO \
 BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
