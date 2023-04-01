@@ -20,6 +20,7 @@ public enum Log {
         case inAppPurchase
         case error
         case database
+        case dependencyInjection
     }
 
     public static var subsystem = Bundle.main.bundleIdentifier!
@@ -112,6 +113,12 @@ public enum Log {
     public static func database(_ string: String) {
         guard enabledLogging.contains(.database) else { return }
         let log = OSLog(subsystem: subsystem, category: LogKit.Log.Category.database.rawValue)
+        os_log("%{PRIVATE}@", log: log, type: .debug, string)
+    }
+
+    public static func dependencyInjection(_ string: String) {
+        guard enabledLogging.contains(.dependencyInjection) else { return }
+        let log = OSLog(subsystem: subsystem, category: LogKit.Log.Category.dependencyInjection.rawValue)
         os_log("%{PRIVATE}@", log: log, type: .debug, string)
     }
 
