@@ -11,7 +11,7 @@ import StoreKit
 
 @available(OSX 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *)
 public enum Log {
-    public enum Category: String, CaseIterable {
+    public enum Category: String, CaseIterable, Sendable {
         case `deinit`
         case function
         case networking
@@ -23,8 +23,8 @@ public enum Log {
         case dependencyInjection
     }
 
-    public static var subsystem = Bundle.main.bundleIdentifier!
-    public static var enabledLogging: [Category] = Category.allCases
+    nonisolated(unsafe) public static var subsystem = Bundle.main.bundleIdentifier!
+    nonisolated(unsafe) public static var enabledLogging: [Category] = Category.allCases
 
     public static func `deinit`(of object: AnyObject) {
         guard enabledLogging.contains(.deinit) else { return }
