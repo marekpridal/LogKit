@@ -6,11 +6,11 @@ on: [push, pull_request]
 jobs:
   build:
     name: Build
-    runs-on: macOS-latest
+    runs-on: macOS-15
 
     steps:
       - name: Checkout branch
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
   
       - name: Build
         run: swift build -v
