@@ -1,0 +1,15 @@
+{
+  "originHash" : "91fc524e4a39ef532c26e525eabbcac7685a25bfca1f83e2060cd88147731ca7",
+  "pins" : [
+    {
+      "identity" : "swift-android-native",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/skiptools/swift-android-native.git",
+      "state" : {
+        "revision" : "c0d6a8422a04bea5f953e8f09efb5344515545ab",
+        "version" : "1.1.0"
+      }
+    }
+  ],
+  "version" : 3
+}
