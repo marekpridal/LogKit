@@ -1,6 +1,6 @@
 # LogKit
 
-![Build](https://github.com/marekpridal/LogKit/workflows/Build/badge.svg?branch=master) ![platforms](https://img.shields.io/badge/platform-iOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20macOS-333333) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager) ![GitHub](https://img.shields.io/github/license/marekpridal/LogKit) ![GitHub All Releases](https://img.shields.io/github/downloads/marekpridal/LogKit/total)
+![Build](https://github.com/marekpridal/LogKit/actions/workflows/build.yml/badge.svg) ![Test](https://github.com/marekpridal/LogKit/actions/workflows/test.yml/badge.svg) ![Publish](https://github.com/marekpridal/LogKit/actions/workflows/Publish.yml/badge.svg) ![platforms](https://img.shields.io/badge/platform-iOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20macOS-333333) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager) ![GitHub](https://img.shields.io/github/license/marekpridal/LogKit) ![GitHub All Releases](https://img.shields.io/github/downloads/marekpridal/LogKit/total)
 
 LogKit is logging framework to simplify work with `os.log` API provided by Apple.
 
@@ -12,11 +12,7 @@ LogKit is logging framework to simplify work with `os.log` API provided by Apple
 
 ## Installation
 
-#### LogKit supports [XCFramework](https://developer.apple.com/videos/play/wwdc2019/416/) integration into Xcode project. Just go to [Release page](https://github.com/marekpridal/LogKit/releases), download latest version, drag and drop it into existing Xcode project and you are done 🎉
-
-![xcframework](assets/xcframework-asset.png)
-
-LogKit also supports SwiftPM. You can integrate LogKit using SwiftPM directly via Xcode or manually using Package.swift.
+LogKit supports SwiftPM. You can integrate LogKit using SwiftPM directly via Xcode or manually using Package.swift.
 
 ### [Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app)
 
@@ -29,14 +25,14 @@ Instead of adding a repository URL, you can search for a package on [GitHub](htt
 Create a `Package.swift` file.
 
 ```swift
-// swift-tools-version:5.0
+// swift-tools-version:6.0
 
 import PackageDescription
 
 let package = Package(
   name: "LogKitExample",
   dependencies: [
-    .package(url: "https://github.com/marekpridal/LogKit", from: "1.0.0")
+    .package(url: "https://github.com/marekpridal/LogKit", from: "2.0.0")
   ],
   targets: [
     .target(name: "LogKitExample", dependencies: ["LogKit"])
@@ -61,7 +57,7 @@ Log.default("Hello world")
 
 Log.error(NSError(domain: "logkit.tests", code: 0, userInfo: nil))
 
-// 2020-05-10 15:34:17.454305+0200 xctest[10906:217188] [error] Operaci nelze dokončit. (logkit.tests chyba 0.)
+// 2020-05-10 15:34:17.454305+0200 xctest[10906:217188] [error] Unable to complete (logkit.tests error 0.)
 
 
 Log.function(#function, in: #file)
