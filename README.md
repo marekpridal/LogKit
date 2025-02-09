@@ -1,14 +1,16 @@
 # LogKit
 
-![Build](https://github.com/marekpridal/LogKit/actions/workflows/build.yml/badge.svg) ![Test](https://github.com/marekpridal/LogKit/actions/workflows/test.yml/badge.svg) ![Publish](https://github.com/marekpridal/LogKit/actions/workflows/Publish.yml/badge.svg) ![platforms](https://img.shields.io/badge/platform-iOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20macOS-333333) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager) ![GitHub](https://img.shields.io/github/license/marekpridal/LogKit) ![GitHub All Releases](https://img.shields.io/github/downloads/marekpridal/LogKit/total)
+![Build](https://github.com/marekpridal/LogKit/actions/workflows/build.yml/badge.svg) ![Test](https://github.com/marekpridal/LogKit/actions/workflows/test.yml/badge.svg) ![Publish](https://github.com/marekpridal/LogKit/actions/workflows/Publish.yml/badge.svg) ![platforms](https://img.shields.io/badge/platform-iOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20macOS%20%7C%20visionOS%20%7C%20Android-333333) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager) ![GitHub](https://img.shields.io/github/license/marekpridal/LogKit) ![GitHub All Releases](https://img.shields.io/github/downloads/marekpridal/LogKit/total)
 
 LogKit is logging framework to simplify work with `os.log` API provided by Apple.
 
-## Requirements
-- iOS 10.0+ 
-- watchOS 3.0+
-- macOS 10.12+
-- tvOS 10.0+
+## Support
+- iOS 14.0+ 
+- watchOS 7.0+
+- macOS 11+
+- tvOS 14.0+
+- visionOS 1.0+
+- Android
 
 ## Installation
 
@@ -32,7 +34,7 @@ import PackageDescription
 let package = Package(
   name: "LogKitExample",
   dependencies: [
-    .package(url: "https://github.com/marekpridal/LogKit", from: "2.0.0")
+    .package(url: "https://github.com/marekpridal/LogKit", from: "3.0.0")
   ],
   targets: [
     .target(name: "LogKitExample", dependencies: ["LogKit"])
