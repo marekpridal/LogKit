@@ -116,7 +116,7 @@ public enum Log {
     public static func error(_ error: Error) {
         guard enabledLogging.contains(.error) else { return }
         let logger = Logger(subsystem: subsystem, category: Category.error.rawValue)
-        logger.debug("\(error.localizedDescription)")
+        logger.error("\(error.localizedDescription)")
     }
 
     public static func database(_ string: String) {
