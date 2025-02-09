@@ -43,8 +43,11 @@ public enum Log {
 #endif
     public static func function(_ function: String, in file: String) {
         guard enabledLogging.contains(.function) else { return }
+#if canImport(Darwin)
         let logger = Logger(subsystem: subsystem, category: Category.function.rawValue)
         logger.debug("\(function) \(file)")
+#elseif os(Android)
+#endif
     }
 
     public static func `default`(_ string: String) {
