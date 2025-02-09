@@ -1,8 +1,11 @@
+#if !os(Android) && !os(Windows) && !os(Linux)
 import StoreKit
+#else
+import FoundationNetworking
+#endif
 import XCTest
 @testable import LogKit
 
-@available(OSX 10.12, *)
 final class LogKitTests: XCTestCase {
     private var log: LogKit.Log.Type {
         let log = Log.self
@@ -21,11 +24,11 @@ final class LogKitTests: XCTestCase {
     private struct Foo: Encodable {
         let bar: String
     }
-
+#if !os(Android) && !os(Windows) && !os(Linux)
     func testLogDeinit() {
         log.deinit(of: self)
     }
-
+#endif
     func testLogFunctionIn() {
         log.function(#function, in: #file)
         log.function(#function, text: "text")
@@ -44,9 +47,7 @@ final class LogKitTests: XCTestCase {
     }
 
     func testLogRequest() {
-        log.request(URLRequest(url: URL(string: "https://github.com/marekpridal/LogKit")!,
-                               cachePolicy: .useProtocolCachePolicy,
-                               timeoutInterval: 30))
+        log.request(URLRequest(url: URL(string: "https://github.com/marekpridal/LogKit")!))
     }
 
     func testLogResponse() {
@@ -66,7 +67,7 @@ final class LogKitTests: XCTestCase {
     func testLogError() {
         log.error(NSError(domain: "logkit.tests", code: 0, userInfo: nil))
     }
-
+#if !os(Android) && !os(Windows) && !os(Linux)
     func testLogSKRequest() {
         log.products(request: .init(productIdentifiers: ["logkit_product_identifier"]))
     }
@@ -86,4 +87,5 @@ final class LogKitTests: XCTestCase {
     func testLogPayment() {
         log.payment(transactions: [.init()])
     }
+#endif
 }
