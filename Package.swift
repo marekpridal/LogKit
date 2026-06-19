@@ -6,7 +6,7 @@ import PackageDescription
 //swiftlint:disable all
 let package = Package(
     name: "LogKit",
-    platforms: [.macOS(.v11), .iOS(.v14), .macCatalyst(.v14), .tvOS(.v14), .watchOS(.v7), .visionOS(.v1)],
+    platforms: [.macOS(.v13), .iOS(.v16), .macCatalyst(.v16), .tvOS(.v16), .watchOS(.v9), .visionOS(.v1)],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
