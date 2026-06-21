@@ -6,8 +6,10 @@
 //
 
 import Foundation
-#if os(Android) || os(Windows) || os(Linux)
+#if os(Android)
 import AndroidLogging
+import FoundationNetworking
+#elseif os(Windows) || os(Linux)
 import FoundationNetworking
 #else
 import OSLog

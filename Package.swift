@@ -4,6 +4,8 @@
 import PackageDescription
 
 //swiftlint:disable all
+
+#if os(Android)
 let package = Package(
     name: "LogKit",
     platforms: [.macOS(.v13), .iOS(.v16), .macCatalyst(.v16), .tvOS(.v16), .watchOS(.v9), .visionOS(.v1)],
@@ -35,3 +37,34 @@ let package = Package(
             dependencies: ["LogKit"])
     ]
 )
+#else
+let package = Package(
+    name: "LogKit",
+    platforms: [.macOS(.v13), .iOS(.v16), .macCatalyst(.v16), .tvOS(.v16), .watchOS(.v9), .visionOS(.v1)],
+    products: [
+        // Products define the executables and libraries produced by a package, and make them visible to other packages.
+        .library(
+            name: "LogKit-static",
+            type: .static,
+            targets: ["LogKit"]),
+        .library(
+            name: "LogKit-dynamic",
+            type: .dynamic,
+            targets: ["LogKit"])
+    ],
+    dependencies: [
+        // Dependencies declare other packages that this package depends on.
+    ],
+    targets: [
+        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
+        // Targets can depend on other targets in this package, and on products in packages which this package depends on.
+        .target(
+            name: "LogKit",
+            dependencies: []
+        ),
+        .testTarget(
+            name: "LogKitTests",
+            dependencies: ["LogKit"])
+    ]
+)
+#endif
